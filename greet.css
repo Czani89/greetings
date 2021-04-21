@@ -29,8 +29,12 @@ input[type="radio"] {
 }
 .btn {
   padding: 0.2rem 1rem;
-  margin-left: 78%;
+
   background-color: blue;
   color: white;
   border: none;
+}
+.display {
+  display: flex;
+  justify-content: space-between;
 }
