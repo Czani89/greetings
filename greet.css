@@ -28,8 +28,6 @@ input[type="radio"] {
   width: 25%;
 }
 .btn {
-  padding: 0.2rem 1rem;
-
   background-color: blue;
   color: white;
   border: none;

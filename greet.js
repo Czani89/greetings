@@ -6,7 +6,7 @@ let greetSpan = document.querySelector(".greet");
 
 var counter = 0;
 button.addEventListener("click", function () {
-  let selectLanguage = greetRad.querySelector("input[name='greeting']:checked")
+  let selectLanguage = document.querySelector("input[name='greeting']:checked")
     .value;
 
   console.log(selectLanguage);
@@ -21,11 +21,7 @@ button.addEventListener("click", function () {
       greetSpan.value = "Molo, " + nameText.value;
       counter++;
     }
-  } else {
-    greetSpan.value = "";
-  }
-
-  greetSpan.innerHTML = greetSpan.value;
+  } else greetSpan.innerHTML = greetSpan.value;
 
   countRad.innerHTML = counter;
 });
