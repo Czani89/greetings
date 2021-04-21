@@ -1,0 +1,36 @@
+body {
+  margin: 0 15%;
+  background-color: wheat;
+  position: relative;
+}
+h1 {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  border: whitesmoke;
+  font-weight: bolder;
+  border: solid black 0.1rem;
+  display: inline-block;
+  margin: 1rem 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+}
+.name {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.language {
+  display: flex;
+  text-align: center;
+  margin: 1rem 0rem;
+  justify-content: space-between;
+}
+input[type="radio"] {
+  width: 25%;
+}
+.btn {
+  padding: 0.2rem 1rem;
+  margin-left: 78%;
+  background-color: blue;
+  color: white;
+  border: none;
+}
