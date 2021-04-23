@@ -1,7 +1,6 @@
 body {
-  margin: 0 15%;
+  margin: 0 8%;
   background-color: wheat;
-  position: relative;
 }
 h1 {
   background-color: cornflowerblue;
@@ -14,25 +13,69 @@ h1 {
   transform: translateX(-50%);
   padding: 0 2rem;
 }
+.container{margin: 2rem;
+  background-color: cadetblue;
+  padding: 1rem;
+}
+.nameContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
 .name {
   display: inline-block;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+}
+.counter {
+  font-weight: 900;
+  font-size:xx-large;
 }
 .language {
   display: flex;
   text-align: center;
-  margin: 1rem 0rem;
-  justify-content: space-between;
+  margin: 2rem 0rem;
+  justify-content: space-evenly;
 }
-input[type="radio"] {
-  width: 25%;
-}
+
 .btn {
   background-color: blue;
   color: white;
   border: none;
+  padding: 0.1rem 0.5rem;
+  border-radius: .3rem;
+  border: white solid .1rem;
+  font-weight: bold;
+  margin: .2rem 0;
+  width: 5rem;
 }
 .display {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
+.greet{
+  color:firebrick;
+}
+@media (max-width: 425px) {
+  .nameContainer,
+  .display {
+    flex-direction: column;
+    
+  }
+  .greetCount {
+    display: block;
+    margin-top: 0.5rem;
+  }
+@media (max-width: 375px) {
+  .nameContainer,
+  .language {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .greetCount {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 375px) {
+ h1 { padding: 0 1rem;}
+  }
+
