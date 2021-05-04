@@ -19,21 +19,21 @@ function greet(existingNames) {
         var capitalName = lowerName[0].toUpperCase() + lowerName.slice(1, lowerName.length);
 
         if (select === "english") {
-            greeting = `Good morning, ${capitalName}!`
+            return greeting = `Good morning, ${capitalName}!`
 
         } else if (select === "afrikaans") {
-            greeting = `Goeie more, ${capitalName}!`
+            return greeting = `Goeie more, ${capitalName}!`
 
         } else if (select === "xhosa") {
-            greeting = `Molo, ${capitalName}!`
+            return greeting = `Molo, ${capitalName}!`
 
         }
     }
 
-    function counter() {
-        var names = Object.keys(nameMap)
-        return names.length
-    }
+    // function counter() {
+    //     var names = Object.keys(nameMap)
+    //     return names.length
+    // }
     // console.log();
     function greetPerson() {
         return greeting
@@ -71,7 +71,7 @@ function greet(existingNames) {
         setName,
         getName,
         greetPerson,
-        counter,
+        // counter,
         newM
         // checker,
         // checked

@@ -1,5 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
 body {
-  margin: 0 8%;
+  margin: 0% 8%;
   background-color: wheat;
 }
 h1 {
@@ -13,9 +19,16 @@ h1 {
   transform: translateX(-50%);
   padding: 0 2rem;
 }
+
+.message{
+ display: inline-block;
+ text-align: center;
+}
+
 .container{margin: 2rem;
   background-color: cadetblue;
   padding: 1rem;
+    box-sizing: border-box;
 }
 .nameContainer {
   display: flex;
@@ -46,9 +59,11 @@ h1 {
   border: white solid .1rem;
   font-weight: bold;
   margin: .2rem 0;
-  width: 5rem;
+  width: 30%;
+  justify-content: center;
+  display: block;
 }
-.display {
+.buttons {
   display: flex;
   justify-content: space-around;
 }
@@ -56,8 +71,7 @@ h1 {
   color:firebrick;
 }
 @media (max-width: 425px) {
-  .nameContainer,
-  .display {
+  .nameContainer {
     flex-direction: column;
     
   }
@@ -65,6 +79,7 @@ h1 {
     display: block;
     margin-top: 0.5rem;
   }
+}
 @media (max-width: 375px) {
   .nameContainer,
   .language {
@@ -74,8 +89,17 @@ h1 {
   .greetCount {
     display: block;
     margin-top: 0.5rem;
+   
   }
-  @media (max-width: 375px) {
- h1 { padding: 0 1rem;}
+  .buttons{
+    flex-direction: column;
+    justify-content: center;
   }
+  .btn{
+    width: 50%;
+   
+  }
+  h1 { padding: 0 1rem;}
+}
+
 

@@ -6,6 +6,7 @@ let resetButton = document.querySelector(".btnReset");
 let greetSpan = document.querySelector(".greet");
 let alertMessage = document.querySelector(".message")
 
+// var getNames = localStorage.getItem("names")
 
 // var counter = 0
 
@@ -18,38 +19,41 @@ button.addEventListener("click", function () {
   var lowerName = nameText.value
 
 
-  var langDiv = document.getElementById("lang");
-
-  var radGroup = langDiv.getElementsByTagName("input")
-
-  console.log(nameText.value);
-  console.log(typeof (nameText.value));
-
-  if (nameText.value === "" && !greetRad.checked) {
-    alertMessage.innerHTML = "Please enter your name and select language!"
-  } else if (nameText.value === "") {
-    alertMessage.innerHTML = "Please enter your name!"
-  } else if (!greetRad.checked) {
-    alertMessage.innerHTML = "Please select language!"
-  }
-  else {
+  if (lowerName) {
     greetMe.setName(lowerName.toLowerCase());
-    let selectLanguage = document.querySelector("input[name='greeting']:checked").value;
+    var selectLanguage = document.querySelector("input[name='greeting']:checked").value;
     greetMe.languages(selectLanguage, greetMe.getName());
+
+  } else {
+    if (nameText.value === "" && !greetRad.checked) {
+      alertMessage.innerHTML = "Please enter your name and select language!"
+    } else if (nameText.value === "") {
+      alertMessage.innerHTML = "Please enter your name!"
+    } else if (!greetRad.checked) {
+      alertMessage.innerHTML = "Please select language!"
+    }
   }
+
 
   localStorage.setItem("names", JSON.stringify(greetMe.newM()))
 
-  countRad.innerHTML = greetMe.counter()
+  if (localStorage["names"]) {
+    nameMap = JSON.parse(localStorage.getItem("names"))
+  }
 
-  greetSpan.innerHTML = greetMe.greetPerson();
+  function counter() {
+    var names = Object.keys(greetMe.newM())
+    return names.length
+  }
+
+  countRad.innerHTML = counter()
+
+  greetSpan.innerHTML = greetMe.languages(selectLanguage, lowerName);
 
   nameText.value = "";
 });
 
-if (localStorage["names"]) {
-  nameMap = JSON.parse(localStorage.getItem("names"))
-}
+
 
 // if (localStorage.getItem("names") === undefined) {
 //   parsedNames = [];
