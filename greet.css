@@ -20,15 +20,14 @@ h1 {
   padding: 0 2rem;
 }
 
-.message{
- display: inline-block;
- text-align: center;
+h4{
+text-align: center;
 }
 
 .container{margin: 2rem;
   background-color: cadetblue;
   padding: 1rem;
-    box-sizing: border-box;
+  
 }
 .nameContainer {
   display: flex;
@@ -42,11 +41,12 @@ h1 {
 .counter {
   font-weight: 900;
   font-size:xx-large;
+  text-align: center;
 }
 .language {
   display: flex;
   text-align: center;
-  margin: 2rem 0rem;
+  margin: 1rem 0rem;
   justify-content: space-evenly;
 }
 
@@ -59,16 +59,19 @@ h1 {
   border: white solid .1rem;
   font-weight: bold;
   margin: .2rem 0;
-  width: 30%;
+  /* width: 30%; */
   justify-content: center;
   display: block;
 }
-.buttons {
+.display {
   display: flex;
   justify-content: space-around;
 }
 .greet{
-  color:firebrick;
+  color:black;
+}
+.message{
+  color: red;
 }
 @media (max-width: 425px) {
   .nameContainer {
@@ -82,23 +85,25 @@ h1 {
 }
 @media (max-width: 375px) {
   .nameContainer,
-  .language {
+  .language,  
+  .display{
     flex-direction: column;
     margin-top: 1rem;
   }
   .greetCount {
     display: block;
     margin-top: 0.5rem;
-   
+   text-align: center;
   }
-  .buttons{
-    flex-direction: column;
-    justify-content: center;
+  
+   
   }
   .btn{
-    width: 50%;
-   
+    width: 30%;
+
   }
+ 
+  
   h1 { padding: 0 1rem;}
 }
 
