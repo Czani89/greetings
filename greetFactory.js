@@ -11,7 +11,7 @@ function greet(existingNames) {
             newNames = lowerParsedName;
         }
         else {
-            nameMap[parsedName]++
+            nameMap[lowerParsedName]++
         }
 
     }
@@ -41,15 +41,6 @@ function greet(existingNames) {
 
     function newMap() { return nameMap }
 
-    function setLocal() {
-        localStorage.setItem("names", JSON.stringify(newMap()))
-    }
-
-    function local() {
-        if (localStorage["names"]) {
-            nameMap = JSON.parse(localStorage.getItem("names"))
-        }
-    }
 
     function counter() {
         var names = Object.keys(nameMap)
@@ -63,8 +54,7 @@ function greet(existingNames) {
         getName,
 
         counter,
-        local,
-        setLocal,
+
         newMap
 
     }

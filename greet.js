@@ -8,7 +8,7 @@ let alertMessage = document.querySelector(".message")
 
 
 var greetMe = greet();
-
+var nameMap2 = 0
 button.addEventListener("click", function () {
   alertMessage.innerHTML = "";
   greetSpan.innerHTML = "";
@@ -21,12 +21,6 @@ button.addEventListener("click", function () {
     greetMe.setName(nameText.value);
 
     greetSpan.innerHTML = greetMe.languages(selectLanguage, nameText.value);
-
-    // for (let i = 0; i < nameMap.length; i++) {
-    //   if (nameMap[i] === lowerName && selectLanguage === "english") {
-    //     nameMap.lowerName[0]++;
-    //   }
-    // }
 
     greetRad.checked = false;
 
@@ -44,39 +38,27 @@ button.addEventListener("click", function () {
     }
   }
 
+  localStorage.setItem("names", JSON.stringify(greetMe.newMap()))
 
-  // localStorage.setItem("names", JSON.stringify(greetMe.newM()))
-  greetMe.setLocal();
-  console.log(greetMe.newMap());
-  // if (localStorage["names"]) {
-  //   nameMap = JSON.parse(localStorage.getItem("names"))
-  // }
-  // console.log(nameMap);
-  // function counter() {
-  //   var names = Object.keys(greetMe.newM())
-  //   return names.length
-  // }
 
   countRad.innerHTML = greetMe.counter()
 
   nameText.value = "";
 });
 
-greetMe.local();
 if (localStorage["names"]) {
-  greetMe.local();
-  countRad.innerHTML = greetMe.counter();
+  nameMap2 = JSON.parse(localStorage.getItem("names"))
+
+  countRad.innerHTML = Object.keys(nameMap2).length
 }
 
 resetButton.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
-  // countRad.innerHTML = 0;
 
 });
 
 
-var gert = greetMe.newMap()
 
 
 
