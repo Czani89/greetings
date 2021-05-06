@@ -50,18 +50,18 @@ text-align: center;
   justify-content: space-evenly;
 }
 
-.btn {
+.buttons {
   background-color: blue;
   color: white;
   border: none;
-  padding: 0.1rem 0.5rem;
   border-radius: .3rem;
   border: white solid .1rem;
   font-weight: bold;
   margin: .2rem 0;
-  /* width: 30%; */
+  width: 40%;
   justify-content: center;
   display: block;
+  text-align: center;
 }
 .display {
   display: flex;
@@ -73,6 +73,12 @@ text-align: center;
 .message{
   color: red;
 }
+.btn{
+    background-color: blue;
+  color: white;
+  border: none;
+  width: 100%;
+  }
 @media (max-width: 425px) {
   .nameContainer {
     flex-direction: column;
@@ -96,15 +102,18 @@ text-align: center;
    text-align: center;
   }
   
-   
-  }
-  .btn{
+  .buttons{
+    background-color: blue;
+  color: white;
     width: 30%;
+    text-align: center;
+    justify-content: center;
 
   }
- 
   
-  h1 { padding: 0 1rem;}
+  h1 { 
+    padding: 0 1rem;
+  }
 }
 
 

@@ -6,7 +6,7 @@ function greet(existingNames) {
 
     function setName(parsedName) {
         if (nameMap[parsedName] === undefined) {
-            nameMap[parsedName] = 0;
+            nameMap[parsedName] = [0, 0, 0];
             newNames = parsedName;
         }
     }
@@ -19,12 +19,15 @@ function greet(existingNames) {
         var capitalName = lowerName[0].toUpperCase() + lowerName.slice(1, lowerName.length);
 
         if (select === "english") {
+            // nameMap.existingNames[0]++
             return greeting = `Good morning, ${capitalName}!`
 
         } else if (select === "afrikaans") {
+
             return greeting = `Goeie more, ${capitalName}!`
 
         } else if (select === "xhosa") {
+
             return greeting = `Molo, ${capitalName}!`
 
         }

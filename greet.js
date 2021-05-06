@@ -26,11 +26,13 @@ button.addEventListener("click", function () {
 
   } else {
     if (nameText.value === "" && !greetRad.checked) {
-      alertMessage.innerHTML = "Please enter your name and select language!"
+      alertMessage.innerHTML = "Please enter your name and select language!";
+
     } else if (nameText.value === "") {
-      alertMessage.innerHTML = "Please enter your name!"
+      alertMessage.innerHTML = "Please enter your name!";
     } else if (!greetRad.checked) {
-      alertMessage.innerHTML = "Please select language!"
+      alertMessage.innerHTML = "Please select language!";
+      greetRad.checked = false;
     }
   }
 
