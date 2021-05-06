@@ -8,7 +8,8 @@ function greet(existingNames) {
         if (nameMap[parsedName] === undefined) {
             nameMap[parsedName] = 0;
             newNames = parsedName;
-        } else {
+        }
+        else {
             nameMap[parsedName]++
         }
 
@@ -42,9 +43,9 @@ function greet(existingNames) {
     //     return names.length
     // }
     // console.log();
-    function greetPerson() {
-        return greeting
-    }
+    // function greetPerson() {
+    //     return greeting
+    // }
 
     function newMap() { return nameMap }
 
@@ -91,7 +92,7 @@ function greet(existingNames) {
         languages,
         setName,
         getName,
-        greetPerson,
+        // greetPerson,
         counter,
         local,
         setLocal,

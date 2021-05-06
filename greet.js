@@ -13,7 +13,9 @@ button.addEventListener("click", function () {
   alertMessage.innerHTML = "";
   greetSpan.innerHTML = "";
 
-  if (nameText.value && greetRad.checked) {
+  var selectLanguageRad = document.querySelector("input[name='greeting']:checked")
+  
+  if (nameText.value && selectLanguageRad.value) {
     var selectLanguage = document.querySelector("input[name='greeting']:checked").value;
 
     greetMe.setName(nameText.value);
