@@ -15,24 +15,24 @@ button.addEventListener("click", function () {
 
   var selectLanguageRad = document.querySelector("input[name='greeting']:checked")
 
-  if (nameText.value && selectLanguageRad.value) {
-    var selectLanguage = document.querySelector("input[name='greeting']:checked").value;
+  if (nameText.value && selectLanguageRad) {
+    var selectLanguage = selectLanguageRad.value
 
     greetMe.setName(nameText.value);
 
     greetSpan.innerHTML = greetMe.languages(selectLanguage, nameText.value);
 
-    greetRad.checked = false;
+    selectLanguageRad.checked = false;
 
   } else {
-    if (nameText.value === "" && !greetRad.checked) {
+    if (nameText.value === "" && !selectLanguageRad) {
       alertMessage.innerHTML = "Please enter your name and select language!";
       setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
-    } else if (nameText.value === "") {
+    } else if (!nameText.value) {
       alertMessage.innerHTML = "Please enter your name!";
-      greetRad.checked = false;
+      selectLanguageRad.checked = false;
       setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
-    } else if (!greetRad.checked) {
+    } else if (!selectLanguageRad) {
       alertMessage.innerHTML = "Please select language!";
       setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     }
