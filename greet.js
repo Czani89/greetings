@@ -14,13 +14,13 @@ button.addEventListener("click", function () {
   greetSpan.innerHTML = "";
 
   var selectLanguageRad = document.querySelector("input[name='greeting']:checked")
-  
+
   if (nameText.value && selectLanguageRad.value) {
     var selectLanguage = document.querySelector("input[name='greeting']:checked").value;
 
     greetMe.setName(nameText.value);
 
-    greetSpan.innerHTML = greetMe.languages(selectLanguage, greetMe.getName());
+    greetSpan.innerHTML = greetMe.languages(selectLanguage, nameText.value);
 
     // for (let i = 0; i < nameMap.length; i++) {
     //   if (nameMap[i] === lowerName && selectLanguage === "english") {
@@ -62,9 +62,6 @@ button.addEventListener("click", function () {
   nameText.value = "";
 });
 
-// if (localStorage["names"]) {
-//   greetMe.newM() = JSON.parse(localStorage.getItem("names"))
-// }
 greetMe.local();
 if (localStorage["names"]) {
   greetMe.local();
@@ -77,5 +74,9 @@ resetButton.addEventListener("click", function () {
   // countRad.innerHTML = 0;
 
 });
+
+
+var gert = greetMe.newMap()
+
 
 

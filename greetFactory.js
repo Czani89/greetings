@@ -5,9 +5,10 @@ function greet(existingNames) {
     // var checks = [];
 
     function setName(parsedName) {
-        if (nameMap[parsedName] === undefined) {
-            nameMap[parsedName] = 0;
-            newNames = parsedName;
+        var lowerParsedName = parsedName.toLowerCase();
+        if (nameMap[lowerParsedName] === undefined) {
+            nameMap[lowerParsedName] = 0;
+            newNames = lowerParsedName;
         }
         else {
             nameMap[parsedName]++
@@ -38,42 +39,10 @@ function greet(existingNames) {
         }
     }
 
-    // function counter() {
-    //     var names = Object.keys(nameMap)
-    //     return names.length
-    // }
-    // console.log();
-    // function greetPerson() {
-    //     return greeting
-    // }
-
     function newMap() { return nameMap }
 
-
-    // function checker() {
-    //     for (let i = 0; i < checks.length; i++) {
-    //         let trimmedName = checks[i].trim();
-    //         if (trimmedName.toLowerCase() === greetMe.getName().toLowerCase()) {
-    //             counter++;
-    //         }
-
-    //     }
-    //     if (counter = 0) {
-    //         checks.push(greetMe.getName());
-    //     }
-    // }
-
-
-
-    // function namesIn() {
-    //     var nameArray = Object.keys(name)
-    // }
-    // function namesOut() {
-    //     return nameArray.length
-    // }
-
     function setLocal() {
-        localStorage.setItem("names", JSON.stringify(nameMap))
+        localStorage.setItem("names", JSON.stringify(newMap()))
     }
 
     function local() {
@@ -92,15 +61,12 @@ function greet(existingNames) {
         languages,
         setName,
         getName,
-        // greetPerson,
+
         counter,
         local,
         setLocal,
         newMap
-        // checker,
-        // checked
-        // namesIn,
-        // namesOut
+
     }
 
 }
