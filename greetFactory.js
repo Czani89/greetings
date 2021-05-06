@@ -14,6 +14,7 @@ function greet(existingNames) {
     function getName() {
         return newNames;
     }
+    
     function languages(select, names) {
         var lowerName = names.toLowerCase();
         var capitalName = lowerName[0].toUpperCase() + lowerName.slice(1, lowerName.length);
