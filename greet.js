@@ -10,19 +10,21 @@ let alertMessage = document.querySelector(".message")
 var greetMe = greet();
 
 button.addEventListener("click", function () {
-  var lowerName = nameText.value
+  alertMessage.innerHTML = "";
+  greetSpan.innerHTML = "";
 
-
-  if (lowerName) {
-    greetMe.setName(lowerName.toLowerCase());
+  if (nameText.value && greetRad.checked) {
     var selectLanguage = document.querySelector("input[name='greeting']:checked").value;
-    greetMe.languages(selectLanguage, greetMe.getName());
 
-    for (let i = 0; i < nameMap; i++) {
-      if (nameMap[i] === lowerName && selectLanguage === "english") {
-        nameMap.lowerName[0]++;
-      }
-    }
+    greetMe.setName(nameText.value);
+
+    greetSpan.innerHTML = greetMe.languages(selectLanguage, greetMe.getName());
+   
+    // for (let i = 0; i < nameMap.length; i++) {
+    //   if (nameMap[i] === lowerName && selectLanguage === "english") {
+    //     nameMap.lowerName[0]++;
+    //   }
+    // }
 
     greetRad.checked = false;
 
@@ -52,8 +54,6 @@ button.addEventListener("click", function () {
   }
 
   countRad.innerHTML = counter()
-
-  greetSpan.innerHTML = greetMe.languages(selectLanguage, lowerName);
 
   nameText.value = "";
 });
