@@ -6,8 +6,10 @@ function greet(existingNames) {
 
     function setName(parsedName) {
         if (nameMap[parsedName] === undefined) {
-            nameMap[parsedName] = [0, 0, 0];
+            nameMap[parsedName] = 0;
             newNames = parsedName;
+        } else {
+            nameMap[parsedName]++
         }
 
     }
@@ -44,7 +46,7 @@ function greet(existingNames) {
         return greeting
     }
 
-    function newM() { return nameMap }
+    function newMap() { return nameMap }
 
 
     // function checker() {
@@ -69,6 +71,20 @@ function greet(existingNames) {
     //     return nameArray.length
     // }
 
+    function setLocal() {
+        localStorage.setItem("names", JSON.stringify(nameMap))
+    }
+
+    function local() {
+        if (localStorage["names"]) {
+            nameMap = JSON.parse(localStorage.getItem("names"))
+        }
+    }
+
+    function counter() {
+        var names = Object.keys(nameMap)
+        return names.length
+    }
 
 
     return {
@@ -76,8 +92,10 @@ function greet(existingNames) {
         setName,
         getName,
         greetPerson,
-        // counter,
-        newM
+        counter,
+        local,
+        setLocal,
+        newMap
         // checker,
         // checked
         // namesIn,

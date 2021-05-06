@@ -31,38 +31,49 @@ button.addEventListener("click", function () {
   } else {
     if (nameText.value === "" && !greetRad.checked) {
       alertMessage.innerHTML = "Please enter your name and select language!";
-      setTimeout(function alertFunc() { alertMessage.innerHTML = ""; }, 3000);
+      setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     } else if (nameText.value === "") {
       alertMessage.innerHTML = "Please enter your name!";
       greetRad.checked = false;
-      setTimeout(function alertFunc() { alertMessage.innerHTML = ""; }, 3000);
+      setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     } else if (!greetRad.checked) {
       alertMessage.innerHTML = "Please select language!";
-      setTimeout(function alertFunc() { alertMessage.innerHTML = ""; }, 3000);
+      setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     }
   }
 
 
-  localStorage.setItem("names", JSON.stringify(greetMe.newM()))
+  // localStorage.setItem("names", JSON.stringify(greetMe.newM()))
+  greetMe.setLocal();
+  console.log(greetMe.newMap());
+  // if (localStorage["names"]) {
+  //   nameMap = JSON.parse(localStorage.getItem("names"))
+  // }
+  // console.log(nameMap);
+  // function counter() {
+  //   var names = Object.keys(greetMe.newM())
+  //   return names.length
+  // }
 
-  if (localStorage["names"]) {
-    nameMap = JSON.parse(localStorage.getItem("names"))
-  }
-  console.log(nameMap);
-  function counter() {
-    var names = Object.keys(greetMe.newM())
-    return names.length
-  }
-
-  countRad.innerHTML = counter()
+  countRad.innerHTML = greetMe.counter()
 
   nameText.value = "";
 });
 
+// if (localStorage["names"]) {
+//   greetMe.newM() = JSON.parse(localStorage.getItem("names"))
+// }
+greetMe.local();
+if (localStorage["names"]) {
+  greetMe.local();
+  countRad.innerHTML = greetMe.counter();
+}
+
 resetButton.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
-  countRad.innerHTML = 0;
+  // countRad.innerHTML = 0;
+
 });
 
 
