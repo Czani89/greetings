@@ -19,7 +19,7 @@ button.addEventListener("click", function () {
     greetMe.setName(nameText.value);
 
     greetSpan.innerHTML = greetMe.languages(selectLanguage, greetMe.getName());
-   
+
     // for (let i = 0; i < nameMap.length; i++) {
     //   if (nameMap[i] === lowerName && selectLanguage === "english") {
     //     nameMap.lowerName[0]++;
@@ -31,13 +31,14 @@ button.addEventListener("click", function () {
   } else {
     if (nameText.value === "" && !greetRad.checked) {
       alertMessage.innerHTML = "Please enter your name and select language!";
-
+      setTimeout(function alertFunc() { alertMessage.innerHTML = ""; }, 3000);
     } else if (nameText.value === "") {
       alertMessage.innerHTML = "Please enter your name!";
       greetRad.checked = false;
+      setTimeout(function alertFunc() { alertMessage.innerHTML = ""; }, 3000);
     } else if (!greetRad.checked) {
       alertMessage.innerHTML = "Please select language!";
-
+      setTimeout(function alertFunc() { alertMessage.innerHTML = ""; }, 3000);
     }
   }
 
@@ -58,13 +59,6 @@ button.addEventListener("click", function () {
   nameText.value = "";
 });
 
-
-
-// if (localStorage.getItem("names") === undefined) {
-//   parsedNames = [];
-// } else {
-//   parsedNames = JSON.parse(setItem("names", parsedNames))
-// }
 resetButton.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
