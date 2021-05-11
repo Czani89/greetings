@@ -14,8 +14,9 @@ button.addEventListener("click", function () {
   greetSpan.innerHTML = "";
 
   var selectLanguageRad = document.querySelector("input[name='greeting']:checked")
+  let regex = /[a-zA-Z]{15}/
 
-  if (nameText.value && selectLanguageRad) {
+  if (nameText.value && selectLanguageRad && regex.test(nameText.value) === true) {
     var selectLanguage = selectLanguageRad.value
 
     greetMe.setName(nameText.value);
@@ -36,10 +37,13 @@ button.addEventListener("click", function () {
       alertMessage.innerHTML = "Please select language!";
       setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     }
+    else if (regex.test(nameText.value) === false) {
+      alertMessage.innerHTML = "Please enter valid name!";
+      setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
+    }
   }
 
   localStorage.setItem("names", JSON.stringify(greetMe.newMap()))
-
 
   countRad.innerHTML = greetMe.counter()
 
@@ -48,7 +52,6 @@ button.addEventListener("click", function () {
 
 if (localStorage["names"]) {
   nameMap2 = JSON.parse(localStorage.getItem("names"))
-
   countRad.innerHTML = Object.keys(nameMap2).length
 }
 
