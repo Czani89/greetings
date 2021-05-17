@@ -2,7 +2,7 @@ function greet(existingNames) {
     var greeting = "";
     var newNames = "";
     var nameMap = existingNames || {};
-    let regex = /[a-zA-Z]{15}/
+    let regex = /[a-zA-Z]/
 
     function setName(parsedName) {
         if (regex.test(parsedName) === true) {

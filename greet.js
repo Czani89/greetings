@@ -14,11 +14,11 @@ button.addEventListener("click", function () {
   greetSpan.innerHTML = "";
 
   var selectLanguageRad = document.querySelector("input[name='greeting']:checked")
-  let regex = /[a-zA-Z]{15}/
+  let regex = /[a-zA-Z]/
 
-  if (nameText.value && selectLanguageRad && regex.test(nameText.value) === true) {
+  if (nameText.value && selectLanguageRad && regex.test(nameText.value) === true && (nameText.value.length <= 10)) {
     var selectLanguage = selectLanguageRad.value
-
+    console.log(nameText.value.length);
     greetMe.setName(nameText.value);
 
     greetSpan.innerHTML = greetMe.languages(selectLanguage, nameText.value);
@@ -37,7 +37,7 @@ button.addEventListener("click", function () {
       alertMessage.innerHTML = "Please select language!";
       setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     }
-    else if (regex.test(nameText.value) === false) {
+    else if (regex.test(nameText.value) === false || nameText.value.length > 10) {
       alertMessage.innerHTML = "Please enter valid name!";
       setTimeout(function () { alertMessage.innerHTML = ""; }, 3000);
     }
